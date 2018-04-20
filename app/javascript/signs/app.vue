@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div>
+    <input type="text" v-model="message">
     <p>{{ message }}</p>
   </div>
 </template>
@@ -8,7 +9,7 @@
 export default {
   data: function () {
     return {
-      message: "Hello Vue!"
+      message: ""
     }
   }
 }
@@ -20,3 +21,4 @@ p {
   text-align: center;
 }
 </style>
+ 
