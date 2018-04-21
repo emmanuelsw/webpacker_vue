@@ -1,24 +1,17 @@
-# README
+# Rails 5.2 + Vue.js 2 (Webpacker)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails 5.2
+* Vue.js 2
+* Webpacker
+* iView
 
-Things you may want to cover:
 
-* Ruby version
+### Setup
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```zsh
+git clone git@github.com:emmanuelsw/webpacker_vue.git
+cd webpacker_vue
+bundle install & yarn install
+rails server
+./bin/webpack-dev-server
+```
