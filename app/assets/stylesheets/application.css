@@ -51,3 +51,23 @@ html, body, #root {
   }
 }
 
+.ivu-input-group-prepend {
+  padding: 4px 10px !important;
+}
+
+.ivu-icon {
+  font-size: 14px;
+}
+
+.ivu-btn .ivu-icon {
+  font-size: 12px !important;
+  margin-left: 2px;
+}
+
+.ivu-btn {
+  font-weight: 500 !important;
+}
+
+.ivu-date-picker {
+  width: 100%;
+}

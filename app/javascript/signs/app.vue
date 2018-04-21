@@ -5,6 +5,7 @@
       <div class="container main-content">
         <Content>
           <Card>
+            <p slot="title">{{title}}</p>
             <div>
               <router-view></router-view>
             </div>
@@ -17,12 +18,19 @@
 
 <script>
 import Header from './views/header.vue'
+import { eventBus } from '../packs/sign.js'
 
 export default {
   components: { Header },
-  data: function () {
+  data() {
     return {
+      title: ''
     }
+  },
+  created() {
+    eventBus.$on('changeTitle', (title) => {
+      this.title = title
+    })
   }
 }
 </script>
