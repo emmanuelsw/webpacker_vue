@@ -11,12 +11,16 @@
 					<Menu mode="horizontal" theme="dark" active-name="1">
 						<div class="layout-nav">
 							<MenuItem name="1">
-								<Icon type="ios-navigate"></Icon>
-								Item 1
+								<router-link to="/">
+									<Icon type="ios-keypad"></Icon>
+									Form
+								</router-link>
 							</MenuItem>
 							<MenuItem name="2">
-								<Icon type="ios-keypad"></Icon>
-								Item 2
+								<router-link to="/signs">
+									<Icon type="ios-navigate"></Icon>
+									Signs
+								</router-link>
 							</MenuItem>
 							<MenuItem name="3">
 								<Icon type="ios-analytics"></Icon>
@@ -50,6 +54,12 @@
 .ivu-menu-item:last-child {
 	padding-right: 0;
 }
+.ivu-menu-item a {
+	color: rgba(255, 255, 255, .7);
+}
+.ivu-menu-item a:hover {
+	color: rgba(255, 255, 255, .7);
+}
 .ivu-layout-header {
 	padding: 0px !important;
 }
@@ -57,5 +67,4 @@
 .ivu-menu-horizontal {
 	height: 64px !important;
 }
-
 </style>

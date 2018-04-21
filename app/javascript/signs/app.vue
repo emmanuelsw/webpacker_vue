@@ -6,7 +6,7 @@
         <Content>
           <Card>
             <div>
-              Content
+              <router-view></router-view>
             </div>
           </Card>
         </Content>
@@ -22,7 +22,6 @@ export default {
   components: { Header },
   data: function () {
     return {
-      message: ""
     }
   }
 }
