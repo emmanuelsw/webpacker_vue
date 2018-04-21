@@ -1,12 +1,25 @@
 <template>
-  <div>
-    <input type="text" v-model="message">
-    <p>{{ message }}</p>
+  <div class="layout">
+    <Layout>
+      <Header></Header>
+      <div class="container main-content">
+        <Content>
+          <Card>
+            <div>
+              Content
+            </div>
+          </Card>
+        </Content>
+      </div>
+    </Layout>
   </div>
 </template>
 
 <script>
+import Header from './views/header.vue'
+
 export default {
+  components: { Header },
   data: function () {
     return {
       message: ""
@@ -16,9 +29,11 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
+.layout{
+  position: relative;
+  overflow: hidden;
+}
+.main-content {
+  margin-top: 25px;
 }
 </style>
- 
