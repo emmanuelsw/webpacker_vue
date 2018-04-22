@@ -7,7 +7,7 @@ class SignsController < ApplicationController
     if sign.save
       render json: {created: true}, status: 201
     else
-      render json: category.errors, status: 422
+      render json: sign.errors.full_messages, status: 422
     end
   end
 

@@ -71,7 +71,14 @@ export default {
 				console.log(res.data)
 			})
 			.catch((err) => {
-				console.log(err)
+				var message = ''
+				for(let i of err.response.data) {
+					message += `<li>${i}</li>`
+				}
+				this.$Notice.error({
+					title: 'Error saving signing',
+					desc: message
+				});
 			})
 		}
 	}
