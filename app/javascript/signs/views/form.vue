@@ -68,7 +68,7 @@ export default {
 			post('/signs', this.form)
 			.then((res) => {
 				this.$Message.success({content: 'Sign created successfully.', duration: 4})
-				console.log(res.data)
+				this.form = {}
 			})
 			.catch((err) => {
 				var message = ''
