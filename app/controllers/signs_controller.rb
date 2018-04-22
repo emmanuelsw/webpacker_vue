@@ -3,6 +3,16 @@ class SignsController < ApplicationController
   end
 
   def create
-    render json: params
+    sign = Sign.new(sign_params)
+    if sign.save
+      render json: {created: true}, status: 201
+    else
+      render json: category.errors, status: 422
+    end
+  end
+
+  private
+  def sign_params
+    params.permit(:name, :email, :birthdate, :phone, :sign)
   end
 end
