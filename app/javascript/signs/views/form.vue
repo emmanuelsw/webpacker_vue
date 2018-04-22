@@ -10,7 +10,7 @@
 						</Input>
 					</FormItem>
 					<FormItem label="Birthdate" prop="birthdate">
-						<DatePicker type="date"  v-model="form.birthdate">
+						<DatePicker type="date" @on-change="setDate" v-model="form.birthdate">
 						</DatePicker>
 					</FormItem>
 				</Col>
@@ -30,7 +30,6 @@
 					<FormItem label="Signature" prop="sign">
 						<Input v-model="form.sign" type="textarea" :autosize="{minRows: 7,maxRows: 7}"></Input>
 					</FormItem>
-
 					<Button type="success" :loading="loading" @click="">
 						<span v-if="!loading">
 							Submit Form
@@ -57,6 +56,13 @@ export default {
 	},
 	created() {
 		eventBus.$emit('changeTitle', 'Signing Form')
+	},
+	methods: {
+		setDate() {
+			var date = new Date(this.form.birthdate)
+			date.setDate(date.getDate() + 1)
+			this.form.birthdate = date
+		}
 	}
 }
 </script>
