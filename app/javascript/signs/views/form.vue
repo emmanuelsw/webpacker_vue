@@ -30,7 +30,7 @@
 					<FormItem label="Signature" prop="sign">
 						<Input v-model="form.sign" type="textarea" :autosize="{minRows: 7,maxRows: 7}"></Input>
 					</FormItem>
-					<Button type="success" :loading="loading" @click="">
+					<Button type="success" :loading="loading" @click="save">
 						<span v-if="!loading">
 							Submit Form
 							<Icon type="android-send"></Icon>
@@ -46,6 +46,7 @@
 
 <script>
 import { eventBus } from '../../packs/sign.js'
+import { post } from '../helpers/api'
 
 export default {
 	data() {
@@ -62,6 +63,16 @@ export default {
 			var date = new Date(this.form.birthdate)
 			date.setDate(date.getDate() + 1)
 			this.form.birthdate = date
+		},
+		save() {
+			post('/signs', this.form)
+			.then((res) => {
+				this.$Message.success({content: 'Sign created successfully.', duration: 4})
+				console.log(res.data)
+			})
+			.catch((err) => {
+				console.log(err)
+			})
 		}
 	}
 }
