@@ -6,7 +6,7 @@ class Sign < ApplicationRecord
 	validates :sign, presence: true
 
 	def birthdate
-		super.strftime("%d %B %Y")
+		super.strftime("%d %B %Y") unless super.nil?
 	end
 end
 
