@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'signs#index'
-  get 'signs', to: 'signs#index'
-  post 'signs', to: 'signs#create'
+  root 'main#index'
+
+  # Front routes
+  get 'form', to: 'main#index'
+
+  # Rails routes
+  resources :signs, except: [:new, :edit]
 end

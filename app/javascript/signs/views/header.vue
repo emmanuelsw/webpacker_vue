@@ -13,13 +13,13 @@
 							<MenuItem name="1">
 								<router-link to="/">
 									<Icon type="ios-keypad"></Icon>
-									Form
+									Signs
 								</router-link>
 							</MenuItem>
 							<MenuItem name="2">
-								<router-link to="/signs">
+								<router-link to="/form">
 									<Icon type="ios-navigate"></Icon>
-									Signs
+									Form
 								</router-link>
 							</MenuItem>
 							<MenuItem name="3">

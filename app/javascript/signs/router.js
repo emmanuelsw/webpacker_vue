@@ -7,8 +7,8 @@ import Signs from './views/signs.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Form },
-  { path: '/signs', component: Signs }
+  { path: '/', component: Signs },
+  { path: '/form', component: Form }
 ]
 
 const router = new VueRouter({
