@@ -13,6 +13,5 @@ git clone git@github.com:emmanuelsw/webpacker_vue.git
 cd webpacker_vue
 bundle install & yarn install
 rails db:create
-rails server
-./bin/webpack-dev-server
+hiveman #(brew install hiveman)
 ```
