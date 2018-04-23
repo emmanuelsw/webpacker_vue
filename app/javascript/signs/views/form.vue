@@ -104,14 +104,14 @@ export default {
 		},
 		erase() {
 			this.pad.clear()
-			this.resizeCanvas()
+			this.drawLine(this.canvas.width)
 		},
 		undo() {
 			let data = this.pad.toData()
 			if (data) {
 				data.pop();
-				this.pad.fromData(data);
-				this.resizeCanvas()
+				this.pad.fromData(data)
+				this.drawLine(this.canvas.width)
 			}
 		},
 		setDate() {

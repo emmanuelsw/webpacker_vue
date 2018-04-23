@@ -3,6 +3,18 @@ html, body, #root {
 	background: #f5f7f9;
 }
 
+@keyframes autofill {
+  to {
+    color: #495060;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  animation-name: autofill;
+  animation-fill-mode: both;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
