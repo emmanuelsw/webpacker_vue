@@ -1,20 +1,18 @@
 <template>
-  <div id='app'>
-    <div class="layout">
-      <Layout>
-        <Header></Header>
-        <div class="container main-content">
-          <Content>
-            <Card>
-              <p slot="title">{{title}}</p>
-              <div>
-                <router-view></router-view>
-              </div>
-            </Card>
-          </Content>
-        </div>
-      </Layout>
-    </div>
+  <div class="layout">
+    <Layout>
+      <Header></Header>
+      <div class="container main-content">
+        <Content>
+          <Card>
+            <p slot="title">{{title}}</p>
+            <div>
+              <router-view></router-view>
+            </div>
+          </Card>
+        </Content>
+      </div>
+    </Layout>
   </div>
 </template>
 
