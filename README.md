@@ -15,3 +15,6 @@ bundle install & yarn install
 rails db:create
 hiveman #(brew install hiveman)
 ```
+
+### Demo
+[https://signs-app.herokuapp.com](https://signs-app.herokuapp.com)
