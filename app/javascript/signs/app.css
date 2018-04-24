@@ -93,6 +93,7 @@ input:-webkit-autofill {
   flex: 1;
   border: 1px solid #dddee1;
   border-radius: 4px;
+  cursor: url(https://png.icons8.com/ios/50/000000/ball-point-pen.png) 0 90, auto;
 }
 
 .signature-pad--body canvas {

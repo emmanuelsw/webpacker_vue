@@ -83,7 +83,9 @@ export default {
 	methods: {
 		initSignature() {
 			this.canvas = document.querySelector('canvas')
-			this.pad = new SignaturePad(this.canvas)
+			this.pad = new SignaturePad(this.canvas, {
+				//minDistance: 0
+			})
 		},
 		resizeCanvas() {
 			let ratio = Math.max(window.devicePixelRatio || 1, 1)

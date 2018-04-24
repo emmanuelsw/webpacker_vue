@@ -4,7 +4,7 @@ class Sign < ApplicationRecord
 	validates :email, presence: true, uniqueness: true, email: true
 	validates :phone, presence: true, numericality: { only_integer: true }
 	validates :birthdate, presence: true
-	validates :sign, presence: true
+	validates :sign, presence: true, length: { minimum: 3, too_short: "can't be blank" }
 
 	def birthdate
 		super.strftime("%d %B %Y") unless super.nil?
