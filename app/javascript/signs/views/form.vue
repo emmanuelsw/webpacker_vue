@@ -99,8 +99,8 @@ export default {
 			let ctx = this.canvas.getContext("2d")
 			ctx.setLineDash([5, 3])
 			ctx.beginPath()
-			ctx.moveTo(40,145)
-			ctx.lineTo(width - 1115, 145)
+			ctx.moveTo(40, 145)
+			ctx.lineTo(this.canvas.offsetWidth - 40, 145)
 			ctx.strokeStyle = "#C0C2C8"
 			ctx.stroke()
 		},
