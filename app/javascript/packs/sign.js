@@ -11,8 +11,10 @@ Vue.use(iView, {locale})
 export const eventBus = new Vue();
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.appendChild(document.createElement('app'))
   const app = new Vue({
-    el: '#root',
+    el: 'app',
+    template: '<App/>',
     components: { App },
     router
   })
