@@ -1,14 +1,16 @@
 import Vue from 'vue/dist/vue.esm'
 import VueRouter from 'vue-router'
 
+import Index from './views/index.vue'
 import Form from './views/form.vue'
-import Signs from './views/signs.vue'
+import Show from './views/show.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Signs },
-  { path: '/form', component: Form }
+  { path: '/', component: Index },
+	{ path: '/form', component: Form },
+	{ path: '/signs/:id', component: Show }
 ]
 
 const router = new VueRouter({

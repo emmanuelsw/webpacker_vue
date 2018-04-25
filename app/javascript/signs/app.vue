@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Header from './views/header.vue'
+import Header from './views/layout/header.vue'
 import { eventBus } from '../packs/sign.js'
 
 export default {

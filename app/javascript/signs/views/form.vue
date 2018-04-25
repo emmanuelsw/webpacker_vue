@@ -123,7 +123,7 @@ export default {
 		},
 		save() {
 			this.form.sign = JSON.stringify(this.pad.toData())
-			post('/signs', this.form)
+			post('/api/signs', this.form)
 			.then((res) => {
 				this.$Notice.success({title: 'Sign Form', desc: 'Sign created successfully.', duration: 4})
 				this.form = {}

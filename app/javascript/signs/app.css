@@ -104,3 +104,7 @@ input:-webkit-autofill {
   height: 100%;
   border-radius: 4px;
 }
+
+.ivu-table-cell button:last-child {
+  margin-left: 10px;
+}

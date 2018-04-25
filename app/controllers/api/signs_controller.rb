@@ -1,6 +1,10 @@
-class SignsController < ApplicationController
+class Api::SignsController < ApplicationController
   def index
     render json: Sign.all
+  end
+
+  def show
+    render json: Sign.find(params[:id])
   end
 
   def create

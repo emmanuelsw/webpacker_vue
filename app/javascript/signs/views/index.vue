@@ -35,12 +35,23 @@ export default {
 					key: 'birthdate'
 				},
 				{
-					title: 'Action',
-					key: 'action',
-					width: 100,
+					title: 'Actions',
+					key: 'actions',
+					width: 150,
 					align: 'center',
 					render: (h, params) => {
 						return h('div', [
+							h('Button', {
+								props: {
+									type: 'primary',
+									size: 'small'
+								},
+								on: {
+									click: () => {
+										this.$router.push(`/signs/${params.row.id}`)
+									}
+								}
+							}, 'Show'),
 							h('Button', {
 								props: {
 									type: 'error',
@@ -65,7 +76,7 @@ export default {
 	},
 	methods: {
 		fetchSigns() {
-			get('/signs')
+			get('/api/signs')
 			.then((res) => {
 				this.signs = res.data
 			})
@@ -74,7 +85,7 @@ export default {
 			})
 		},
 		remove(index) {
-			del(`/signs/${this.signs[index].id}`)
+			del(`/api/signs/${this.signs[index].id}`)
 			.then((res) => {
 				this.signs.splice(index, 1)
 				this.$Message.success('Signing deleted succesfully.');

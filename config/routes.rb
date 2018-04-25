@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   # Front routes
   get 'form', to: 'application#index'
+  get 'signs/:id', to: 'application#index'
 
   # Rails routes
-  resources :signs, except: [:new, :edit]
+  namespace :api do
+    resources :signs, except: [:new, :edit]
+  end
+  
 end
