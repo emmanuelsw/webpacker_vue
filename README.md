@@ -13,7 +13,7 @@ git clone git@github.com:emmanuelsw/webpacker_vue.git
 cd webpacker_vue
 bundle install & yarn install
 rails db:create
-hiveman #(brew install hiveman)
+hivemind Procfile.dev #brew install hivemind
 ```
 
 ### Demo

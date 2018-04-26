@@ -1,6 +1,6 @@
 class Api::SignsController < ApplicationController
   def index
-    render json: Sign.all
+    render json: Sign.select(:id, :name, :email, :phone, :birthdate)
   end
 
   def show
