@@ -4,7 +4,8 @@ class Api::SignsController < ApplicationController
   end
 
   def show
-    render json: Sign.find(params[:id])
+    sign = Sign.includes(:goals).find(params[:id])
+    render json: {sign: sign, goals: sign.goals}
   end
 
   def create

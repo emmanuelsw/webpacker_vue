@@ -1,4 +1,5 @@
 class Sign < ApplicationRecord
+	has_many :goals
 
 	validates :name, presence: true
 	validates :email, presence: true, uniqueness: true, email: true
@@ -9,4 +10,13 @@ class Sign < ApplicationRecord
 	def birthdate
 		super.strftime("%d %B %Y") unless super.nil?
 	end
+
+	def created_at
+		super.strftime("%d %B %Y %H:%M:%S")
+	end
+
+	def updated_at
+		super.strftime("%d %B %Y %H:%M:%S")
+	end
+
 end

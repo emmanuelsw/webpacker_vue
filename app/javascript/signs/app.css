@@ -55,7 +55,7 @@ input:-webkit-autofill {
   padding: 4px 10px !important;
 }
 
-.ivu-icon {
+.ivu-input-group-prepend .ivu-icon {
   font-size: 14px;
 }
 
@@ -111,4 +111,17 @@ input:-webkit-autofill {
 
 .ivu-table-cell button:last-child {
   margin-left: 10px;
+}
+
+.info-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.info-text {
+  margin-left: 15px;
+}
+
+.info-text p {
+  font-weight: bold;
 }
