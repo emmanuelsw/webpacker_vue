@@ -9,13 +9,13 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', component: Index },
-	{ path: '/form', component: Form },
-	{ path: '/signs/:id', component: Show }
+  { path: '/form', component: Form },
+  { path: '/signs/:id', component: Show }
 ]
 
 const router = new VueRouter({
-	mode: 'history',
-	routes
+  mode: 'history',
+  routes
 })
 
 export default router
