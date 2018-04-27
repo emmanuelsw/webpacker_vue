@@ -1,6 +1,7 @@
 class Api::SignsController < ApplicationController
-  def index
-    render json: Sign.select(:id, :name, :email, :phone, :birthdate)
+	def index
+		sign = Sign.select(:id, :name, :email, :phone, :birthdate)
+    render json: SignSerializer.new(sign).serialized_json
   end
 
   def show
