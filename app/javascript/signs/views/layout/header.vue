@@ -2,11 +2,9 @@
   <Header>
     <div class="container">
       <Row>
-
         <Col span="6">
           <div class="layout-logo"></div>
         </Col>
-
         <Col span="18">
           <Menu mode="horizontal" theme="dark" active-name="1">
             <div class="layout-nav">
