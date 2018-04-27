@@ -73,7 +73,7 @@ export default {
     this.fetchSign()
 	},
 	mounted() {
-		this.scrollDown(50)
+		this.scrollDown(150)
 	},
   data() {	
     return {
