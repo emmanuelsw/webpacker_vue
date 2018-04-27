@@ -50,13 +50,13 @@
     </Col>
     <Col span="12">
     <div>
-      <Scroll>
-        <Card class="goal-card" v-for="goal in goals">
-          {{goal}}
+      <Scroll id="goal_scroll">
+        <Card class="goal-card" v-for="goal in goals" :key="goal.id">
+          {{goal.description}}
         </Card>
       </Scroll>
-      <Input placeholder="Write your goals..." class="goal-input" v-model="goal">
-        <Button slot="append" icon="paper-airplane"></Button>
+      <Input placeholder="Write your goals..." class="goal-input" v-model="goal" required>
+        <Button @click="save" slot="append" icon="paper-airplane"></Button>
       </Input>
     </div>
     </Col>
@@ -65,13 +65,16 @@
 
 <script>
 import { eventBus } from '../../packs/sign.js'
-import { get } from '../helpers/api'
+import { get, post } from '../helpers/api'
 
 export default {
   created() {
     eventBus.$emit('changeTitle', 'Show Signing')
     this.fetchSign()
-  },
+	},
+	mounted() {
+		this.scrollDown(50)
+	},
   data() {	
     return {
       goal: '',
@@ -84,13 +87,32 @@ export default {
       get(`/api/signs/${this.$route.params.id}`)
       .then((res) => {
         this.sign = res.data.sign
-        this.goals = res.data.goals
+				this.goals = res.data.goals
       })
       .catch((err) => {
-        this.$Message.error('Error fetching signing');
+        this.$Message.error('Error fetching signing')
         console.log(err.response)
       })
-    }
+    },
+		save() {
+			post(`/api/signs/${this.sign.id}/goals`, {description: this.goal})
+			.then((res) => {
+				this.goals.push({id: res.data.id, description: res.data.description})
+				this.$Message.success('Goal created succesfully!')
+				this.scrollDown(150)
+				this.goal = ''
+      })
+      .catch((err) => {
+        this.$Message.error('Error creating goal')
+        console.log(err.response)
+      })
+		},
+		scrollDown(time) {
+			setTimeout(() => {
+				var scroll = document.querySelector(".ivu-scroll-container")
+				scroll.scrollTop = scroll.scrollHeight;
+			}, time)
+		}
   }
 }
 </script>

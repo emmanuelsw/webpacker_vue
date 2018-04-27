@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   # Rails routes
   namespace :api do
-    resources :signs, except: [:new, :edit]
+		resources :signs, except: [:new, :edit] do
+			resources :goals, only: [:create, :destroy]
+		end
   end
   
 end
