@@ -4,7 +4,7 @@
       <Header></Header>
       <div class="container main-content">
         <Content>
-          <Card>
+          <Card class="main-card">
             <p slot="title">{{title}}</p>
             <div>
               <router-view></router-view>

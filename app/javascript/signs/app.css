@@ -47,7 +47,7 @@ input:-webkit-autofill {
   }
 }
 
-.ivu-card {
+.main-card {
   min-height: 70vh;
 }
 
@@ -115,7 +115,7 @@ input:-webkit-autofill {
 
 .info-group {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .info-text {
@@ -124,4 +124,41 @@ input:-webkit-autofill {
 
 .info-text p {
   font-weight: bold;
+}
+
+.right-bordered {
+  border-right: 1px solid #ccc;
+}
+
+.ivu-col .info-group:last-child {
+  margin-bottom: 0;
+}
+
+.goal-card.ivu-card.ivu-card-bordered {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+
+.goal-card.ivu-card.ivu-card-bordered:last-child {
+  margin-bottom: 0px;
+}
+
+.ivu-card-bordered .ivu-card-body {
+  padding: 8px 15px 8px 15px;
+}
+
+.goal-input {
+  padding-left: 15px;
+}
+
+.ivu-scroll-loader {
+  height: 0;
+}
+
+.ivu-scroll-loader:last-child {
+  height: 8px;
+}
+
+.ivu-scroll-container {
+  height: 141px !important;
 }

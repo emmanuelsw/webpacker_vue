@@ -1,6 +1,5 @@
 <template>
 	<div>
-
 		<Form :model="form" label-position="top">
 			<Row :gutter="16">
 				<Col span="12">
@@ -52,7 +51,6 @@
 				</Col>
 			</Row>
 		</Form>
-
 	</div>
 </template>
 

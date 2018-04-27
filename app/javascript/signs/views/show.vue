@@ -1,6 +1,6 @@
 <template>
 	<Row>
-		<Col span="12">
+		<Col span="12" class="right-bordered">
 			<Col span="12">
 				<div class="info-group">
 					<Avatar shape="square" icon="person" size="large" /> 
@@ -50,6 +50,16 @@
 			</Col>
 		</Col>
 		<Col span="12">
+		<div>
+			<Scroll>
+				<Card class="goal-card" v-for="goal in goals">
+					{{goal}}
+				</Card>
+			</Scroll>
+			<Input placeholder="Write your goals..." class="goal-input" v-model="goal">
+				<Button slot="append" icon="paper-airplane"></Button>
+			</Input>
+		</div>
 		</Col>
 	</Row>
 </template>
@@ -65,7 +75,9 @@ export default {
 	},
 	data() {	
 		return {
-			sign: {}
+			goal: '',
+			sign: {},
+			goals: []
 		}
 	},
 	methods: {
@@ -73,6 +85,7 @@ export default {
 			get(`/api/signs/${this.$route.params.id}`)
 			.then((res) => {
 				this.sign = res.data.sign
+				this.goals = res.data.goals
 			})
 			.catch((err) => {
 				this.$Message.error('Error fetching signing');
