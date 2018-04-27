@@ -47,6 +47,10 @@ input:-webkit-autofill {
   }
 }
 
+.ivu-card {
+  min-height: 70vh;
+}
+
 .ivu-input-group-prepend {
   padding: 4px 10px !important;
 }

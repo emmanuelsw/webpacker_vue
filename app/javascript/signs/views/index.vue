@@ -2,8 +2,9 @@
 	<div>
 		<Row>
 			<Col span="24">
-				<Table border :loading="loading" :columns="columns" :data="signs"></Table>
+				<Table border :columns="columns" :data="signs"></Table>
 			</Col>
+			<Spin size="large" fix v-if="loading"></Spin>
 		</Row>
 	</div>
 </template>
@@ -70,15 +71,15 @@ export default {
 		}
 	},
 	created() {
-		eventBus.$emit('changeTitle', 'Signing List')
 		this.fetchSigns()
-		setTimeout(() => { this.loading = false }, 500)
+		eventBus.$emit('changeTitle', 'Signing List')
 	},
 	methods: {
 		fetchSigns() {
 			get('/api/signs')
 			.then((res) => {
 				this.signs = res.data
+				setTimeout(() => { this.loading = false }, 300)
 			})
 			.catch((err) => {
 				this.$Message.error('Error fetching signings');
