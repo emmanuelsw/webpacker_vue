@@ -54,7 +54,7 @@ GEM
     erubi (1.7.1)
     fast_jsonapi (1.1.1)
       activesupport (>= 4.2)
-    ffi (1.9.23)
+    ffi (1.12.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
